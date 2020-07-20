@@ -4,8 +4,9 @@ import java.util.Set;
 
 import tng.springframework.sfgpetclinic.model.Vet;
 import tng.springframework.sfgpetclinic.services.CrudService;
+import tng.springframework.sfgpetclinic.services.VetService;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long>{
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService{
 
 	@Override
 	Set<Vet> fildAll() {
@@ -45,6 +46,12 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements Crud
 
 	@Override
 	public Vet save(Vet object) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Vet findByLastName(String lastName) {
 		// TODO Auto-generated method stub
 		return null;
 	}

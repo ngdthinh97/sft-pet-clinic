@@ -9,12 +9,19 @@ import tng.springframework.sfgpetclinic.services.OwnerService;
 
 @Service
 public class OwnerServiceMap extends AbstractMapService<Owner , Long> implements OwnerService{
-
+	
 	@Override
-	public Set<Owner> fildAll() {
+	public Set<Owner> findAll() {
 		// TODO Auto-generated method stub
 		return super.fildAll();
 	}
+
+	@Override
+	public Owner save(Owner object) {
+		// TODO Auto-generated method stub
+		return super.save(object.getId(), object);
+	}
+
 
 	@Override
 	public Owner findById(Long id) {
@@ -22,11 +29,6 @@ public class OwnerServiceMap extends AbstractMapService<Owner , Long> implements
 		return super.findById(id);
 	}
 
-	@Override
-	public Owner save(Long id, Owner object) {
-		// TODO Auto-generated method stub
-		return super.save(id, object);
-	}
 
 	@Override
 	public void deleteById(Long id) {
@@ -39,23 +41,18 @@ public class OwnerServiceMap extends AbstractMapService<Owner , Long> implements
 		// TODO Auto-generated method stub
 		super.delete(object);
 	}
-
-	@Override
-	public Set<Owner> findAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Owner save(Owner object) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	//---------------------------------------------
 
 	@Override
 	public Owner findByLastName(String lastName) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+
+
+
+
 	 
 }

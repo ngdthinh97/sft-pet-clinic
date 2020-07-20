@@ -12,21 +12,27 @@ import tng.springframework.sfgpetclinic.services.VetService;
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService{
 
 	@Override
-	Set<Vet> fildAll() {
+	public Set<Vet> findAll() {
 		// TODO Auto-generated method stub
 		return super.fildAll();
+	}
+
+	@Override
+	public Vet save(Vet object) {
+		// TODO Auto-generated method stub
+		return super.save(object.getId(), object);
+	}
+
+	@Override
+	public Vet findByLastName(String lastName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	public Vet findById(Long id) {
 		// TODO Auto-generated method stub
 		return super.findById(id);
-	}
-
-	@Override
-	Vet save(Long id, Vet object) {
-		// TODO Auto-generated method stub
-		return super.save(id, object);
 	}
 
 	@Override
@@ -40,23 +46,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
 		// TODO Auto-generated method stub
 		super.delete(object);
 	}
-	//
-	@Override
-	public Set<Vet> findAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Vet save(Vet object) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Vet findByLastName(String lastName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+	
 	
 }

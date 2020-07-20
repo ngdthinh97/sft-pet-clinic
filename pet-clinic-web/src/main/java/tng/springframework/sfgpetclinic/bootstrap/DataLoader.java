@@ -1,4 +1,5 @@
 package tng.springframework.sfgpetclinic.bootstrap;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import tng.springframework.sfgpetclinic.model.Owner;
@@ -13,7 +14,6 @@ public class DataLoader implements CommandLineRunner{
 	private final OwnerService ownerService;
 	private final VetService vetService;
 	
-	//@Autowire
 	public DataLoader(OwnerService ownerService, VetService vetService) {
 		this.ownerService = ownerService;
 		this.vetService = vetService;
@@ -34,9 +34,9 @@ public class DataLoader implements CommandLineRunner{
 		
 		
 		Owner owner2 = new Owner();
-		owner1.setId(2L);
-		owner1.setFirstName("Thinh2");
-		owner1.setLastName("Nguyen2");
+		owner2.setId(2L);
+		owner2.setFirstName("Adame");
+		owner2.setLastName("Anderson");
 		
 		ownerService.save(owner2);
 		
@@ -53,10 +53,11 @@ public class DataLoader implements CommandLineRunner{
 		
 		Vet vet2 = new Vet();
 		vet2.setId(2L);
-		vet2.setFirstName("Sam2");
-		vet2.setLastName("Axe2");
+		vet2.setFirstName("Kuro");
+		vet2.setLastName("youkai");
 		vetService.save(vet2);
 		
 		System.out.println("Loading vet");
+
 	}
 }

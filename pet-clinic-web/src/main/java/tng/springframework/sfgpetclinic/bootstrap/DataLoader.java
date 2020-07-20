@@ -1,15 +1,11 @@
 package tng.springframework.sfgpetclinic.bootstrap;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
 import tng.springframework.sfgpetclinic.model.Owner;
-import tng.springframework.sfgpetclinic.model.Person;
 import tng.springframework.sfgpetclinic.model.Vet;
 import tng.springframework.sfgpetclinic.services.OwnerService;
 import tng.springframework.sfgpetclinic.services.VetService;
-import tng.springframework.sfgpetclinic.services.map.OwnerServiceMap;
-import tng.springframework.sfgpetclinic.services.map.VetServiceMap;
+
 
 @Component
 public class DataLoader implements CommandLineRunner{
@@ -17,15 +13,14 @@ public class DataLoader implements CommandLineRunner{
 	private final OwnerService ownerService;
 	private final VetService vetService;
 	
-	
-	
-	public DataLoader() {
-		this.ownerService = new OwnerServiceMap();
-		this.vetService = new VetServiceMap();
+	//@Autowire
+	public DataLoader(OwnerService ownerService, VetService vetService) {
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
-
-
-
+	
+	
+	
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub

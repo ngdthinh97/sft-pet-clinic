@@ -3,11 +3,26 @@ package tng.springframework.sfgpetclinic.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "owners")
 public class Owner extends Person{
 	
+	@Column(name = "address")
 	private String address;
+	@Column(name = "city")
 	private String city;
+	@Column(name = "telephone")
 	private String telephone;
+	
+	@OneToMany(cascade = CascadeType.ALL , mappedBy = "owner") // i have a pet mapped by owner, and if i have deleted a owner the pet also is deleted 
 	private Set<Pet> pets = new HashSet<>();
 	
 	public String getAddress() {

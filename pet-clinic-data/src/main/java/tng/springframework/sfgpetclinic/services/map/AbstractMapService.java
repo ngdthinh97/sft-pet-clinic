@@ -14,7 +14,7 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> 
 	
 	protected Map<Long , T> map = new HashMap<>();
 	
-	Set<T> fildAll(){
+	Set<T> findAll(){
 		return new HashSet<>(map.values());
 	}
 	

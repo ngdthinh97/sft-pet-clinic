@@ -22,7 +22,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
 	@Override
 	public Set<Vet> findAll() {
 		// TODO Auto-generated method stub
-		return super.fildAll();
+		return super.findAll();
 	}
 
 	@Override

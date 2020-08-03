@@ -4,27 +4,34 @@ import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
-import tng.springframework.sfgpetclinic.model.Speciality;
-import tng.springframework.sfgpetclinic.services.SpecialityService;
+import tng.springframework.sfgpetclinic.model.Visit;
+import tng.springframework.sfgpetclinic.services.VisitService;
 
 @Service
-public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> implements SpecialityService{   
+public class VisitServiceMap extends AbstractMapService<Visit, Long> implements VisitService{
 
+	
 	@Override
-	public Set<Speciality> findAll() {
+	public Set<Visit> findAll() {
 		// TODO Auto-generated method stub
 		return super.findAll();
 	}
 
 	@Override
-	public Speciality findById(Long id) {
+	public Visit findById(Long id) {
 		// TODO Auto-generated method stub
 		return super.findById(id);
 	}
 
 	@Override
-	public Speciality save(Speciality object) {
+	public Visit save(Visit object) {
 		// TODO Auto-generated method stub
+		if(object.getPet() == null || object.getPet().getOwner() == null 
+				|| object.getPet().getId() == null || object.getPet().getOwner().getId() == null)
+		{
+			throw new RuntimeException("Invalid visit");
+		}
+		
 		return super.save(object);
 	}
 
@@ -35,9 +42,10 @@ public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> i
 	}
 
 	@Override
-	public void delete(Speciality object) {
+	public void delete(Visit object) {
 		// TODO Auto-generated method stub
 		super.delete(object);
 	}
+
 	
 }

@@ -10,6 +10,7 @@ import tng.springframework.sfgpetclinic.services.CrudService;
 import tng.springframework.sfgpetclinic.services.PetService;
 
 @Service
+@Profile({"default","map"})
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
 	@Override

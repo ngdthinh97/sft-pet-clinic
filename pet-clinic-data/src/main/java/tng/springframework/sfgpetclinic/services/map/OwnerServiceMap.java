@@ -13,6 +13,7 @@ import tng.springframework.sfgpetclinic.services.PetService;
 import tng.springframework.sfgpetclinic.services.PetTypeService;
 
 @Service
+@Profile({"default","map"})
 public class OwnerServiceMap extends AbstractMapService<Owner , Long> implements OwnerService{
 	
 	private final PetService petService;

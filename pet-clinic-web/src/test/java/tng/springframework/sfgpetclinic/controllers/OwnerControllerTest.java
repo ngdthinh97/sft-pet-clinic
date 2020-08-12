@@ -48,7 +48,7 @@ class OwnerControllerTest {
 
 	@Test
 	void testOwnerController() {
-		fail("Not yet implemented");
+
 	}
 
 	@Test

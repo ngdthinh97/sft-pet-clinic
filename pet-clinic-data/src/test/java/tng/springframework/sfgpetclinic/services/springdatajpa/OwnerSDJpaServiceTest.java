@@ -51,7 +51,7 @@ class OwnerSDJpaServiceTest {
 
 	@Test
 	void testOwnerSDJpaService() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test

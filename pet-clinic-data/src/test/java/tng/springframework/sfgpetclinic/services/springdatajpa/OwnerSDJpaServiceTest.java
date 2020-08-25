@@ -1,6 +1,6 @@
 package tng.springframework.sfgpetclinic.services.springdatajpa;
 
-import static org.junit.jupiter.api.Assertions.*; 
+import static org.junit.jupiter.api.Assertions.*;  
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -26,6 +26,7 @@ import tng.springframework.sfgpetclinic.repositories.PetTypeRepository;
 
 @ExtendWith(MockitoExtension.class)
 class OwnerSDJpaServiceTest {
+	
 	private final String Last_name = "Nguyen";
 	private final Long id = 1L;
 	@Mock

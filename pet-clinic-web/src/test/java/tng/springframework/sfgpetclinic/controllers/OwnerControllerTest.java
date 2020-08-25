@@ -1,6 +1,11 @@
 package tng.springframework.sfgpetclinic.controllers;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.hamcrest.CoreMatchers.any;
+import static org.hamcrest.CoreMatchers.anything;
+import static org.hamcrest.CoreMatchers.is;
+import static org.mockito.ArgumentMatchers.anyLong;
+
+import static org.junit.jupiter.api.Assertions.*;  
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -11,6 +16,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.HashSet;
 import java.util.Set;
 
+import static org.hamcrest.Matchers.*;
+import org.hamcrest.beans.HasProperty;
+import org.hamcrest.beans.HasPropertyWithValue;
+import org.hamcrest.core.Is;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -70,5 +79,15 @@ class OwnerControllerTest {
         .andExpect(view().name("notImplementYet"));
 
 	}
-
+	
+	@Test
+	void displayOwner() throws Exception{
+		when(ownerService.findById(anyLong())).thenReturn(Owner.builder().id(10l).build());
+		mockMvc.perform(get("/owners/123"))
+        	.andExpect(status().isOk())
+        	.andExpect(view().name("owners/ownerDetails"))
+        	.andExpect(model().attribute("owner", ownerService.findById(10l)));
+        	
+		
+	}
 }
